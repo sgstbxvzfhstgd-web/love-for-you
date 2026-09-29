@@ -1,0 +1,321 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ถึงเธอ ❤️</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9a9e,
+                    #fad0c4
+                );
+
+            overflow: hidden;
+
+            color: #fff;
+        }
+
+        .card {
+
+            width: 90%;
+
+            max-width: 500px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            background:
+                rgba(255,255,255,0.18);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.2);
+        }
+
+        .big-heart {
+
+            font-size: 80px;
+
+            animation:
+                heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+
+        }
+
+        h1 {
+
+            font-size: 38px;
+
+            margin: 10px 0;
+        }
+
+        .intro {
+
+            font-size: 20px;
+
+            line-height: 1.7;
+        }
+
+        button {
+
+            margin-top: 20px;
+
+            padding: 15px 30px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: white;
+
+            color: #ff5c7a;
+
+            font-size: 19px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        button:hover {
+
+            transform:
+                scale(1.08);
+
+        }
+
+        #message {
+
+            display: none;
+
+            margin-top: 25px;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+        }
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -50px;
+
+            pointer-events: none;
+
+            animation:
+               ลอย 5s linear forwards;
+        }
+
+        @keyframes ลอย {
+
+            from {
+
+                transform:
+                    translateY(0);
+
+                opacity: 1;
+            }
+
+            to {
+
+                transform:
+                    translateY(-110vh);
+
+                opacity: 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="big-heart">
+        ❤️
+    </div>
+
+    <h1>
+        ถึงคนพิเศษ
+    </h1>
+
+    <div class="intro">
+
+        <p>
+            เรามีอะไรอยากบอก
+        </p>
+
+        <p>
+            เธอเป็นคนนึงที่ทำให้
+            เรารู้สึกว่าแต่ละวัน
+            มีอะไรให้น่ารอคอย 😊
+        </p>
+
+    </div>
+
+    <button onclick="showMessage()">
+
+        💌 มีอะไรจะบอก
+
+    </button>
+
+    <div id="message">
+
+        <p>
+            จริงๆ เราอาจจะไม่ได้พูด
+            บ่อยขนาดนั้น
+        </p>
+
+        <p>
+            แต่เราชอบเวลาที่ได้คุยกับเธอ
+            และชอบที่ได้รู้จักเธอมากขึ้น
+        </p>
+
+        <h2>
+            ขอบคุณที่เข้ามาในชีวิตนะ ❤️
+        </h2>
+
+        <p>
+            ขอให้เราได้คุยกันแบบนี้
+            ไปนานๆ เลยนะ :)
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function showMessage() {
+
+    document.getElementById(
+        "message"
+    ).style.display = "block";
+
+
+    for (
+        let i = 0;
+        i < 20;
+        i++
+    ) {
+
+        createHeart();
+
+    }
+
+}
+
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className =
+        "heart";
+
+
+    const hearts = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘"
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random()
+                * hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random()
+        * 100
+        + "vw";
+
+
+    heart.style.fontSize =
+        (20 +
+        Math.random() * 25)
+        + "px";
+
+
+    heart.style.animationDuration =
+        (3 +
+        Math.random() * 4)
+        + "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        () => heart.remove(),
+        7000
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
